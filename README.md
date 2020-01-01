@@ -9,20 +9,28 @@ This project aims to build a system that can identify the genre of a greek song 
 
 ---
 
-Genres in our dataset: ['Τσιφτετέλι', 'Παραδοσιακό Πόντου', 'Ρεμπέτικο', 'Έντεχνο', 'Αφήγηση'
- 'Μπαλάντα', 'Νησιώτικο', 'Λαικό', 'RAP', 'Ποπ', 'Παραδοσιακό Θράκης', 'Τάνγκο'
- 'Λάτιν', 'Παραδοσιακό', 'Παραδοσιακό Πελοποννήσου', 'Κλασική'
- 'Παραδοσιακό Κύπρου', 'Παραδοσιακό Μακεδονίας', 'Παραδοσιακό Ηπείρου'
- 'Ελληνικό Ποπ', 'Αμελοποίητο', 'Pop', 'Foxtrot', 'Hip Hop', 'R&B', 'Reggae'
- 'Swing', 'Βαλς', 'Tango', 'Λαικό Μπαλάντα', 'Παραδοσιακό Κρήτης'
- 'Ελληνική μπαλάντα', 'Ύμνος', 'Ελληνικό λαικό', 'Παραδοσιακό Χίου'
- 'Ελληνικό Ροκ', 'Ελληνικό Ραπ', 'Ραπ', 'Bossa Νova', 'Ελληνικό χιπ χοπ'
- 'Δημοτικό', 'Παραδοσιακό Κυκλάδες', 'Παραδοσιακό Μικράς Ασίας', 'Ποντιακό'
- 'Τζαζ', 'Παιδικό', 'Απαγγελία', 'Ξένο Παραδοσιακό', 'Παραδοσιακό Θεσσαλίας'
- 'Ταραντέλα', 'Ελληνικό RAP', 'Παραδοσιακό Αρμενίας', 'Beguine'
- "Rock 'n' roll" 'Καντάδα', 'Εκκλησιαστικό', 'Τσάρλεστον', 'Twist'
- 'Παραδοσιακό Σμύρνης', 'Παραδοσιακό Ρωσίας', 'Λυρικό', 'Παραδοσιακό Ικαρίας'
- 'Μαντινάδα', 'ροκ-ποπ', 'Ροκ', 'Παραδοσιακό Κάσου', 'Βυζαντινό'
- 'Παραδοσιακό Ανδαλουσίας', 'Παραδοσιακό Ανατολής', 'Disco'
- 'Παραδοσιακό Καλύμνου', 'Παραδοσιακό Τουρκίας', 'Παραδοσιακό Γαλλίας']
- 
+
+### To run the code, follow the steps below.
+
+To import the environment we are working on, open a terminal at /resources, where the environment.yml is located and run:  
+*conda env create -f environment.yml*  
+If an error shows up about the installation of spacy library, we will fix it below.
+
+To activate the imported environment:    
+*conda activate python3.7*  
+
+Then we need to install spacy to the activated environment, as we use it for lemmatization. Unfortunately the greek model is not yet upoloaded into spacy, but it is upoloaded in spacy nightly which is not supported by anaconda.
+
+To install spacy nightly:  
+*pip install spacy-nightly*  
+*conda install -c conda-forge spacy-lookups-data*  
+
+And finally to install the greek model:  
+*python -m spacy download el_core_news_sm*    
+
+The code is placed in jupyter's notebook file, Classifier.ipynb .
+
+### Loading of pre-trained Neural Network models
+
+While you run the code you can either train the neural models your self, or load them from /resources, where we uploaded them as soon as we trained them. To choose to train the models just comment the model loading shell and uncomment the model trainning shell above.
+
